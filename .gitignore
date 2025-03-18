@@ -7,4 +7,6 @@ env/
 
 *.sqlite3
 
-**/.env
+src/config/.env
+
+.env
