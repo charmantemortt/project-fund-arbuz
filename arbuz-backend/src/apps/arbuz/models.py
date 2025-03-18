@@ -1,7 +1,7 @@
 from datetime import date, timezone
 from django.db import models
 
-class Projects(models.Model):
+class Project(models.Model):
     id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=255)
     description = models.TextField()
