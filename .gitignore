@@ -7,6 +7,6 @@ env/
 
 *.sqlite3
 
-.src/.env
+src/.env
 
 .env
