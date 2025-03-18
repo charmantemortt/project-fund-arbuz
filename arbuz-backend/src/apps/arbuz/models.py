@@ -28,4 +28,13 @@ class Forms(models.Model):
     link_status = models.CharField(max_length=500, choices=LINKS_CHOICE)
     link_field = models.TextField()
 
+    def __str__(self):
+        return f"{self.summa}"
 
+class News(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    created_at = models.DateTimeField(blank=False, null=True, default=timezone.now)
+
+    def __str__(self):
+        return f"{self.name}"
