@@ -25,3 +25,4 @@ EXPOSE 8000 80 9001
 
 # Устанавливаем точку входа
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+ 
