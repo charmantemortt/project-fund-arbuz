@@ -15,19 +15,9 @@ class FormsViewSet(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        self.perform_create(serializer)
-        headers = self.get_success_headers(serializer.data)
-        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
-
-    def perform_create(self, serializer):
-        Forms.objects.create_form(
-            sum=serializer.validated_data['sum'],
-            pay_status=serializer.validated_data['pay_status'],
-            user_name=serializer.validated_data['user_name'],
-            comment=serializer.validated_data['comment'],
-            link_status=serializer.validated_data['link_status'],
-            link_field=serializer.validated_data['link_field']
-        )
+        print(serializer.data)
+        Forms.objects.create_form(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class NewsViewSet(viewsets.ModelViewSet):
     queryset = News.objects.all()

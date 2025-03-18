@@ -10,6 +10,10 @@ class Project(models.Model):
     def __str__(self):
         return f"{self.name}"
 
+    class Meta:
+        verbose_name = 'Проект'
+        verbose_name_plural = 'Проекты'
+
 PAY_CHOICE = (
     ('разовый', 'разовый'),
     ('ежемесячный', 'ежемесячный')
@@ -31,7 +35,11 @@ class Forms(models.Model):
     objects = FormsManager()
 
     def __str__(self):
-        return f"{self.sum}"
+        return f"{self.user_name}, {self.sum}"
+
+    class Meta:
+        verbose_name = 'Форма'
+        verbose_name_plural = 'Формы'
 
 class News(models.Model):
     name = models.CharField(max_length=255)
@@ -40,3 +48,7 @@ class News(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+
+    class Meta:
+        verbose_name = 'Новость'
+        verbose_name_plural = 'Новости'
