@@ -7,6 +7,6 @@ env/
 
 *.sqlite3
 
-arbuz-backend/src/.env
+/src/.env
 
 .env
