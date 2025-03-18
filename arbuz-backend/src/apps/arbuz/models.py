@@ -1,8 +1,8 @@
 from datetime import date, timezone
 from django.db import models
+from .managers import FormsManager
 
 class Project(models.Model):
-    id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=255)
     description = models.TextField()
     image = models.ImageField()
@@ -11,8 +11,8 @@ class Project(models.Model):
         return f"{self.name}"
 
 PAY_CHOICE = (
-    ('разовый', "разовый"),
-    ('ежемесячный', "ежемесячный")
+    ('разовый', 'разовый'),
+    ('ежемесячный', 'ежемесячный')
 )
 
 LINKS_CHOICE = (
@@ -21,20 +21,22 @@ LINKS_CHOICE = (
 )
 
 class Forms(models.Model):
-    summa = models.DecimalField(decimal_places=1, max_digits=100000)
+    sum = models.DecimalField(decimal_places=1, max_digits=10)
     pay_status = models.CharField(max_length=100, choices=PAY_CHOICE)
     user_name = models.CharField(max_length=255)
     comment = models.TextField()
     link_status = models.CharField(max_length=500, choices=LINKS_CHOICE)
     link_field = models.TextField()
 
+    objects = FormsManager()
+
     def __str__(self):
-        return f"{self.summa}"
+        return f"{self.sum}"
 
 class News(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
-    created_at = models.DateTimeField(blank=False, null=True, default=timezone.now)
+    created_at = models.DateTimeField(blank=False, null=True, auto_now=True)
 
     def __str__(self):
         return f"{self.name}"
