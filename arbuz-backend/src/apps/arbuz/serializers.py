@@ -11,7 +11,3 @@ class FormsSerializer(serializers.ModelSerializer):
         model = Forms
         fields = ('sum', 'pay_status', 'user_name', 'comment', 'link_status', 'link_field')
 
-class NewsSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = News
-        fields = ('name', 'description', 'created_at')
