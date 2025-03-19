@@ -6,9 +6,9 @@ from .views import ProjectViewSet, FormsViewSet, NewsViewSet
 
 router = DefaultRouter()
 
-router.register(r'projects', ProjectViewSet)
-router.register(r'forms', FormsViewSet)
-router.register(r'news', NewsViewSet)
+router.register(r'project', ProjectViewSet)
+router.register(r'form', FormsViewSet)
+router.register(r'new', NewsViewSet)
 
 urlpatterns = [
     path('', include(router.urls))
