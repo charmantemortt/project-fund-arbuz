@@ -15,8 +15,15 @@ class FormsViewSet(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        print(serializer.data)
-        Forms.objects.create_form(serializer.data)
+
+        project_id = serializer.validated_data['project'].id
+        project = Project.objects.get(id=project_id)
+
+        project.current_amount += serializer.validated_data['sum']
+        project.save()
+
+        form = Forms.objects.create(**serializer.validated_data)
+
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class NewsViewSet(viewsets.ModelViewSet):

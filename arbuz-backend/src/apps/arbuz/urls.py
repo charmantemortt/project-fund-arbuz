@@ -8,7 +8,7 @@ router = DefaultRouter()
 
 router.register(r'project', ProjectViewSet)
 router.register(r'form', FormsViewSet)
-router.register(r'new', NewsViewSet)
+router.register(r'news', NewsViewSet)
 
 urlpatterns = [
     path('', include(router.urls))

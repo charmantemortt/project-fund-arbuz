@@ -4,7 +4,7 @@ from .models import Project, Forms, News
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
-        fields = ('id', 'name', 'description', 'image')
+        fields = ('id', 'name', 'description', 'image', 'current_amount', 'target_amount')
 
 class FormsSerializer(serializers.ModelSerializer):
     class Meta:

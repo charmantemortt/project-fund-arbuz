@@ -5,6 +5,9 @@ from .managers import FormsManager
 class Project(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
+    current_amount = models.DecimalField(decimal_places=1, max_digits=10, default=0)
+    target_amount = models.DecimalField(decimal_places=1, max_digits=10)
+
     image = models.ImageField()
 
     def __str__(self):
