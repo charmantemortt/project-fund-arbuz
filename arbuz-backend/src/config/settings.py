@@ -60,23 +60,40 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
-
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "https://walermelon-practic-2.vercel.app",
-    "https://arbuz-backend.santej.space"
+CSRF_TRUSTED_ORIGINS = [
+    'https://walermelon-practic-2.vercel.app',
+    'https://arbuz-backend.santej.space'
 ]
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://walermelon-practic-2.vercel.app",
-    "https://arbuz-backend.santej.space"
+CORS_ALLOWED_ORIGINS = [
+    'https://walermelon-practic-2.vercel.app',
+    'https://arbuz-backend.santej.space'
+]
+CORS_ALLOW_HEADERS = [
+    'authorization',  # Разрешаем заголовок Authorization
+    'content-type',
+    'x-requested-with',
+    'accept',
+    'origin',
+    'user-agent',
+    'accept-encoding',
+    'accept-language',
+]
+
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'DELETE',
+    'OPTIONS',  # Разрешаем preflight-запросы
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+
 
 ROOT_URLCONF = 'config.urls'
 
