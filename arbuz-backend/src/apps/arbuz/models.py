@@ -44,7 +44,7 @@ class Forms(models.Model):
         verbose_name_plural = 'Формы'
 
 class News(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, verbose_name='Название')
     description = models.TextField()
     created_at = models.DateTimeField(blank=False, null=True, auto_now=True)
 
