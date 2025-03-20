@@ -65,11 +65,11 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 INTERNAL_IPS = [
     "127.0.0.1",
-    "195.140.146.117"
+    "103.88.242.42"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://svo.nvkb.ru"
+    "https://walermelon-practic-2.vercel.app/"
 ]
 
 CORS_ALLOW_CREDENTIALS = True
