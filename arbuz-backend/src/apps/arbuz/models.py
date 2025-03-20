@@ -6,7 +6,7 @@ class Project(models.Model):
     description = models.TextField(verbose_name='Описание')
     current_amount = models.DecimalField(decimal_places=1, max_digits=10, default=0, verbose_name='Текущий сбор')
     target_amount = models.DecimalField(decimal_places=1, max_digits=10, verbose_name='Цель сборов')
-    image = models.ImageField(verbose_name='Изображение')
+    image = models.ImageField()
 
     def __str__(self):
         return f"{self.name}"
