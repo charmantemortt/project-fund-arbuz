@@ -30,7 +30,7 @@ services:
     volumes:
       - .:/app
       - ./static:/app/static
-      - media-data:/app/media
+      - ./media:/app/media
     ports:
       - "8000:8000"
     networks:
