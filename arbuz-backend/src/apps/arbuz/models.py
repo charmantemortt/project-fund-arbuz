@@ -30,7 +30,7 @@ class Forms(models.Model):
     sum = models.DecimalField(decimal_places=1, max_digits=10)
     pay_status = models.CharField(max_length=100, choices=PAY_CHOICE)
     user_name = models.CharField(max_length=255)
-    comment = models.TextField()
+    comment = models.TextField(verbose_name='Комментарий')
     link_status = models.CharField(max_length=500, choices=LINKS_CHOICE)
     link_field = models.TextField()
 
@@ -45,7 +45,7 @@ class Forms(models.Model):
 
 class News(models.Model):
     name = models.CharField(max_length=255, verbose_name='Название')
-    description = models.TextField()
+    description = models.TextField(verbose_name='Описание')
     created_at = models.DateTimeField(blank=False, null=True, auto_now=True)
 
     def __str__(self):
