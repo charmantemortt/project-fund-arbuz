@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'corsheaders',
     'apps.arbuz',
     'drf_yasg'
 ]
@@ -65,11 +64,16 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 INTERNAL_IPS = [
     "127.0.0.1",
-    "103.88.242.42"
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "https://walermelon-practic-2.vercel.app",
+    "https://arbuz-backend.santej.space"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://walermelon-practic-2.vercel.app/"
+    "https://walermelon-practic-2.vercel.app",
+    "https://arbuz-backend.santej.space"
 ]
 
 CORS_ALLOW_CREDENTIALS = True
