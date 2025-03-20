@@ -71,6 +71,8 @@ CSRF_TRUSTED_ORIGINS = [
     'https://arbuz-backend.santej.space'
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
+
 CORS_ALLOWED_ORIGINS = [
     'https://walermelon-practic-2.vercel.app',
     'https://arbuz-backend.santej.space'
