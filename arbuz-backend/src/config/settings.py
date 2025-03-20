@@ -170,9 +170,8 @@ STATIC_ROOT = '/app/static/'
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 # Media files
-
-MEDIA_ROOT = '/app/media/'
 MEDIA_URL = 'media/'
+MEDIA_ROOT = '/app/media/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
